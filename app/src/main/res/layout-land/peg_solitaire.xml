@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gamecenter.PegSolitaire">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@+id/gridLayoutPegSolitaire"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497">
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="00: 00 : 00"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/score"
+            app:layout_constraintStart_toStartOf="@+id/score"></TextView>
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Score: 0"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayoutPegSolitaire"></TextView>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="restart"
+            android:text="Restart"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayoutPegSolitaire"></Button>
+
+        <Button
+            android:id="@+id/buttonLast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="goBack"
+            android:text="Last move"></Button>
+
+        <TextView
+            android:id="@+id/gameOverText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="GAME OVER"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/score"
+            app:layout_constraintVertical_bias="1.0"></TextView>
+
+    </LinearLayout>
+
+
+    <GridLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/gridLayoutPegSolitaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:columnCount="7"
+        android:rowCount="7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <ImageView
+            android:onClick="selectPeg" android:tag="00"
+            android:id="@+id/peg00"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="01"
+            android:id="@+id/peg01"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="02"
+            android:id="@+id/peg02"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="03"
+            android:id="@+id/peg03"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="04"
+            android:id="@+id/peg04"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="05"
+            android:id="@+id/peg05"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="06"
+            android:id="@+id/peg06"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="10"
+            android:id="@+id/peg10"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="11"
+            android:id="@+id/peg11"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="12"
+            android:id="@+id/peg12"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="13"
+            android:id="@+id/peg13"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="14"
+            android:id="@+id/peg14"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="15"
+            android:id="@+id/peg15"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="16"
+            android:id="@+id/peg16"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="20"
+            android:id="@+id/peg20"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="21"
+            android:id="@+id/peg21"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="22"
+            android:id="@+id/peg22"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="23"
+            android:id="@+id/peg23"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="24"
+            android:id="@+id/peg24"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="25"
+            android:id="@+id/peg25"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="26"
+            android:id="@+id/peg26"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="30"
+            android:id="@+id/peg30"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="31"
+            android:id="@+id/peg31"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="32"
+            android:id="@+id/peg32"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="33"
+            android:id="@+id/peg33"
+            android:src="@drawable/empty"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="34"
+            android:id="@+id/peg34"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="35"
+            android:id="@+id/peg35"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="36"
+            android:id="@+id/peg36"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="40"
+            android:id="@+id/peg40"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="41"
+            android:id="@+id/peg41"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="42"
+            android:id="@+id/peg42"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="43"
+            android:id="@+id/peg43"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="44"
+            android:id="@+id/peg44"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="45"
+            android:id="@+id/peg45"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="46"
+            android:id="@+id/peg46"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="50"
+            android:id="@+id/peg50"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="51"
+            android:id="@+id/peg51"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="52"
+            android:id="@+id/peg52"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="53"
+            android:id="@+id/peg53"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="54"
+            android:id="@+id/peg54"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="55"
+            android:id="@+id/peg55"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="56"
+            android:id="@+id/peg56"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="60"
+            android:id="@+id/peg60"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="61"
+            android:id="@+id/peg61"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="62"
+            android:id="@+id/peg62"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="63"
+            android:id="@+id/peg63"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="64"
+            android:id="@+id/peg64"
+            android:src="@drawable/peg"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="65"
+            android:id="@+id/peg65"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+        <ImageView
+            android:onClick="selectPeg" android:tag="66"
+            android:id="@+id/peg66"
+            android:src="@drawable/none"
+            android:layout_height="@dimen/defaultSizePeg"
+            android:layout_width="@dimen/defaultSizePeg"></ImageView>
+
+    </GridLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

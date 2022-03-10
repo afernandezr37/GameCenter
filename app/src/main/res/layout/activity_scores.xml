@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:useDefaultMargins="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Scores">
+    <Button
+        android:layout_margin="5dp"
+        android:onClick="openPegSolitaireScores"
+        style="@style/word_title"
+        android:id="@+id/ScoresPeg"
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:text="Peg solitaire"
+        android:layout_height="match_parent"></Button>
+    <Button
+        android:layout_margin="5dp"
+        android:onClick="open2048Scores"
+        style="@style/word_title"
+        android:id="@+id/Scores2048"
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:text="2048"
+        android:layout_height="match_parent"></Button>
+
+
+</LinearLayout>
